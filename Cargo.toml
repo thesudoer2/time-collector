@@ -1,0 +1,17 @@
+[package]
+name = "time_collector"
+version = "0.1.0"
+edition = "2024"
+links = "time_collector"
+license = "MIT"
+
+[package.metadata.zanbil]
+cpp = 17
+
+[dependencies]
+boost_fusion = "0.1.0"
+boost_phoenix = "0.1.0"
+boost_spirit = "0.1.0"
+
+[build-dependencies]
+zanbil-build = "0.0.1"

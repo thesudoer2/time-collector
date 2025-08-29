@@ -8,6 +8,9 @@
 # Undo ignore for directories
 !*/
 
+# Undo ignore for LICENSE
+!LICENSE
+
 
 # Binary files
 *.bin

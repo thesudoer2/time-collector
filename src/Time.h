@@ -2,15 +2,13 @@
 
 #include <cinttypes>
 
-#include <vector>
 #include <iomanip>
 #include <iostream>
+#include <vector>
 
-namespace TimeCollector
-{
+namespace TimeCollector {
 
-class Time final
-{
+class Time final {
     friend std::ostream& operator<<(std::ostream&, const Time&);
 
 public:
@@ -37,8 +35,7 @@ private:
 };
 
 // AST node types
-class TimeInterval final
-{
+class TimeInterval final {
 public:
     TimeInterval() = default;
 
@@ -53,8 +50,7 @@ private:
     Time _end;
 };
 
-struct TimeExpression final
-{
+struct TimeExpression final {
     TimeExpression() noexcept = default;
 
     explicit TimeExpression(std::vector<TimeInterval> intervals) noexcept;

@@ -2,14 +2,15 @@
 
 #include <cinttypes>
 
-#include <vector>
 #include <iostream>
+#include <vector>
 
-namespace TimeCollector
-{
+namespace TimeCollector {
 
 Time::Time() noexcept
-    : _hours(0), _minutes(0), _seconds(0)
+    : _hours(0)
+    , _minutes(0)
+    , _seconds(0)
 {
 }
 
@@ -23,7 +24,8 @@ Time::Time(std::int32_t hours, std::int32_t minutes, std::int32_t seconds) noexc
 std::uint32_t Time::to_seconds(bool is_end) const noexcept
 {
     std::int32_t hours { _hours };
-    if (is_end) hours = (_hours == 0 ? 24 : _hours);
+    if (is_end)
+        hours = (_hours == 0 ? 24 : _hours);
     return hours * 3600 + _minutes * 60 + _seconds;
 }
 
@@ -54,9 +56,9 @@ Time Time::operator*(double ratio) const noexcept
     return Time::from_seconds(this->to_seconds() * ratio);
 }
 
-
 TimeInterval::TimeInterval(const Time& start, const Time& end) noexcept
-    : _start{start}, _end{end}
+    : _start { start }
+    , _end { end }
 {
 }
 
@@ -68,9 +70,8 @@ void TimeInterval::setTimeIntervalPair(std::pair<Time, Time> time_interval_pair)
 
 std::pair<Time, Time> TimeInterval::getTimeIntervalPair() const noexcept
 {
-    return {_start, _end};
+    return { _start, _end };
 }
-
 
 TimeExpression::TimeExpression(std::vector<TimeInterval> intervals) noexcept
     : _intervals(std::move(intervals))
@@ -86,7 +87,6 @@ const std::vector<TimeInterval> TimeExpression::getIntervals() const noexcept
 {
     return _intervals;
 }
-
 
 std::ostream& operator<<(std::ostream& os, const Time& time)
 {

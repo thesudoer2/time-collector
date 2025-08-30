@@ -22,6 +22,7 @@ Build/
 Release/
 Debug/
 RelWithDebInfo/
+target/
 
 # Editors
 *.swp

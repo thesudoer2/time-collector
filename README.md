@@ -30,15 +30,19 @@ Time Collector is a command-line C++ program for calculating total time from a s
 ### Example
 
 **Input:**
+
 ```
 08:30-12:00 13:00-17:00
 ```
+
 **Output:**
+
 ```
 Total time: 7 hours 30 minutes
 ```
 
 **Output:**
+
 ```
 Total time: 11 hours 15 minutes
 ```
@@ -54,21 +58,46 @@ Total time: 11 hours 15 minutes
 
 ## Building
 
-This project is written in C++. You can build it using g++ or any standard C++ compiler:
+This project is written in C++, and uses Zanbil or CMake as the build system.
+
+### Zanbil
+
+The Zanbil is a frontend for Cargo build system and package manager. You just need to install zanbil, and it takes
+care of the rest:
+
+```sh
+zanbil run
+```
+
+### CMake
+
+This program depends on boost so you need to install it systemwide:
+
+* Ubuntu/Debian
+```
+sudo apt install libboost-all-dev
+```
+* CentOS/RHEL
+```
+sudo yum install boost-devel
+```
+* MacOS
+```
+brew install boost
+```
+* Windows
+```
+.\vcpkg install boost:x64-windows
+```
+
+Then you can build the project using normal CMake commands:
 
 ```sh
 mkdir build
 cd build
 cmake ../
 cmake --build . -j
-```
-
-## Usage
-
-Run the program and input your intervals as described above:
-
-```sh
-./time_collector
+./time-collector
 ```
 
 ## Notes

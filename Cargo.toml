@@ -13,6 +13,10 @@ format_command = "clang-format -style=webkit -i"
 boost_fusion = "0.1.0"
 boost_phoenix = "0.1.0"
 boost_spirit = "0.1.0"
+gtest_cpp = { version = "0.1.0", optional = true }
 
 [build-dependencies]
-zanbil-build = "0.0.1"
+zanbil-build = "0.1.0"
+
+[features]
+test = ["dep:gtest_cpp"]

@@ -1,0 +1,4 @@
+[tools]
+"github:hkalbasi/zanbil" = "v0.0.2"
+rust = "1.89"
+zig = "0.14"

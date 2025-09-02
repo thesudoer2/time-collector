@@ -62,42 +62,11 @@ This project is written in C++, and uses Zanbil or CMake as the build system.
 
 ### Zanbil
 
-The Zanbil is a frontend for Cargo build system and package manager. You just need to install zanbil, and it takes
-care of the rest:
+The Zanbil is a frontend for Cargo build system and package manager. You just need to install zanbil and other related
+devtools using [mise](https://mise.jdx.dev/getting-started.html). After installing and activating mise, you are able to run:
 
 ```sh
 zanbil run
-```
-
-### CMake
-
-This program depends on boost so you need to install it systemwide:
-
-* Ubuntu/Debian
-```
-sudo apt install libboost-all-dev
-```
-* CentOS/RHEL
-```
-sudo yum install boost-devel
-```
-* MacOS
-```
-brew install boost
-```
-* Windows
-```
-.\vcpkg install boost:x64-windows
-```
-
-Then you can build the project using normal CMake commands:
-
-```sh
-mkdir build
-cd build
-cmake ../
-cmake --build . -j
-./time-collector
 ```
 
 ## Notes

@@ -1,0 +1,4 @@
+set(TEST_SOURCES
+    ${PROJECT_SOURCE_NO_MAIN}
+    ${CMAKE_CURRENT_SOURCE_DIR}/Time/Time.cpp
+)

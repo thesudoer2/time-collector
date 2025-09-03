@@ -43,8 +43,6 @@ double promptRatio(const std::string& prompt, double default_value)
     }
 }
 
-#ifndef ENABLE_TEST
-
 auto main() -> int
 {
     std::cout << "Time Calculator" << std::endl;
@@ -103,5 +101,3 @@ auto main() -> int
 
     return 0;
 }
-
-#endif

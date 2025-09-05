@@ -38,8 +38,14 @@ jobs:
           cd build
           ctest -j$(nproc)
 
-      - name: Run zanbil checks
+      - name: Run zanbil format checker
         run: |
           zanbil fmt --check
+
+      - name: Build project with zanbil
+        run: |
           zanbil build
+
+      - name: Build and run unit tests with zanbil
+        run: |
           zanbil test

@@ -20,6 +20,32 @@ jobs:
           mkdir -p .cargo
           echo '[target.x86_64-unknown-linux-gnu]' > .cargo/config.toml
           echo 'linker = "zanbil_cc"' >> .cargo/config.toml
-      - run: zanbil fmt --check
-      - run: zanbil build
-      - run: zanbil test
+
+      - name: Install dependencies for C++
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cmake g++ make libboost1.74-dev libgtest-dev googletest google-mock cmake-extras
+
+      - name: Configure and build with CMake
+        run: |
+          mkdir build
+          cd build
+          cmake -DENABLE_TESTS=ON ..
+          cmake --build . -j$(nproc)
+
+      - name: Run tests with CTest
+        run: |
+          cd build
+          ctest -j$(nproc)
+
+      - name: Run zanbil format checker
+        run: |
+          zanbil fmt --check
+
+      - name: Build project with zanbil
+        run: |
+          zanbil build
+
+      - name: Build and run unit tests with zanbil
+        run: |
+          zanbil test

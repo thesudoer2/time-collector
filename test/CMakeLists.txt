@@ -34,7 +34,6 @@ endif()
 target_link_libraries(unit_tests PRIVATE
     GTest::gtest
     GTest::gtest_main
-    GTest::gmock
 )
 
 foreach(RES ${TIME_COLLECTOR_TEST_NON_CODE_RESOURCES})

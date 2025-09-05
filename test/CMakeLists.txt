@@ -48,6 +48,9 @@ foreach(RES ${TIME_COLLECTOR_TEST_NON_CODE_RESOURCES})
   )
 endforeach()
 
+# Register the test with CTest
+add_test(NAME unit_tests COMMAND unit_tests)
+
 include(GoogleTest)
 
 message(STATUS "===================== Finished ${PROJECT_NAME} =====================")
